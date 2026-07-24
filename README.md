@@ -1,59 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🦆 Bebek Komputer - E-Commerce Part Komputer
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi e-commerce penjualan part komputer yang dibangun menggunakan framework Laravel. Proyek ini dikembangkan untuk memenuhi Ujian Akhir Semester (UAS) mata kuliah Pemrograman Web Lanjut.
 
-## About Laravel
+Aplikasi ini melingkupi sistem inventaris barang, pemisahan hak akses (Admin dan Pembeli), serta fitur cetak laporan stok barang.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 👨‍💻 Identitas Pengembang
+- **Nama**: Zulfathan Akbar
+- **NIM**: 230170200
+- **Mata Kuliah**: Pemrograman Web Lanjut
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🛠️ Teknologi yang Digunakan
+- **Framework:** Laravel 11.x
+- **Frontend:** Tailwind CSS & Blade Templating
+- **Authentication:** Laravel Breeze (dengan Verifikasi Email)
+- **Database:** MySQL
+- **Export Laporan:** Barryvdh/Laravel-DomPDF
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🔑 Akun Demo
+Gunakan akun berikut untuk menguji coba fitur pembatasan hak akses pada aplikasi:
 
-## Laravel Sponsors
+**Akun Admin (Full Access Dashboard & CRUD)**
+- **Email:** admin@bebekkomputer.com
+- **Password:** password123
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Akun User / Pembeli (Hanya Katalog)**
+- **Email:** user@bebekkomputer.com
+- **Password:** password123
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🚀 Cara Instalasi dan Menjalankan Aplikasi
 
-## Contributing
+Ikuti langkah-langkah berikut untuk menjalankan aplikasi di server lokal (localhost):
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone repository ini**
+   ```bash
+   git clone 
+   cd bebek-komputer
 
-## Code of Conduct
+## Install semua dependensi PHP dan Node.js
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Bash
+composer install
+npm install
+Konfigurasi Environment
+Salin file konfigurasi bawaan dan sesuaikan dengan database lokal Anda.
 
-## Security Vulnerabilities
+Bash
+cp .env.example .env
+php artisan key:generate
+Buka file .env, lalu atur DB_DATABASE=bebek_komputer (pastikan Anda sudah membuat database kosong dengan nama tersebut di MySQL).
+Untuk simulasi verifikasi email, pastikan MAIL_MAILER=log.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Jalankan Migrasi dan Seeder (Untuk Data Awal)
 
-## License
+Bash
+php artisan migrate --seed
+Kompilasi Asset Frontend & Jalankan Server Lokal
+Buka dua terminal terpisah dan jalankan kedua perintah ini:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Bash
+npm run dev
+php artisan serve
+Aplikasi sekarang dapat diakses melalui browser di http://127.0.0.1:8000.
+
+## 📸 Dokumentasi Fitur Aplikasi
+Berikut adalah bukti tangkapan layar (screenshot) bahwa seluruh fitur wajib telah berjalan dengan baik:
+
+### 1. Halaman Login / Autentikasi
+Berikut adalah tampilan halaman login web Bebek Komputer:
+![Halaman Login](docs/login.png)
+
+### 2. Dashboard & CRUD Part Komputer
+Berikut adalah halaman pengelola untuk menambah dan menghapus barang:
+![Dashboard CRUD](docs/dashboard.png) 
+
+### 3. Verifikasi Email (Proteksi Akses)
+Berikut adalah peringatan wajib verifikasi email bagi pengguna baru sebelum dapat mengakses sistem:
+![Verifikasi Email](docs/verify-email.png)
+
+### 4. Pemisahan Hak Akses (View User)
+Berikut adalah halaman katalog utama untuk berbelanja yang dikhususkan bagi pelanggan biasa:
+![Hak Akses Katalog](docs/katalog-user.png)
+
+### 5. Hasil Export Laporan PDF
+Berikut adalah bukti dokumen hasil unduhan laporan inventaris barang dalam format PDF:
+![Export PDF](docs/export-pdf.png)
+
+### 6. Tampilan Responsive (Mobile Friendly)
+Berikut adalah antarmuka web yang menyesuaikan secara otomatis saat dibuka menggunakan layar HP:
+![Tampilan Responsive](docs/responsive-mobile.png)
+
+### 7. REST API (Pengujian Postman)
+Berikut adalah bukti pengujian rute endpoint API pemanggilan data menggunakan aplikasi Postman:
+![Pengujian API](docs/api-postman.png)
